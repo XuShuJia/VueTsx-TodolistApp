@@ -1,0 +1,28 @@
+:root {
+  --color: #333333;
+  --backgroundColor: #edf9ff;
+}
+body[data-theme="light"] {
+  --color: #333333;
+  --backgroundColor: #edf9ff;
+}
+body[data-theme="dark"] {
+  --color: #ffffff;
+  --backgroundColor: #000000;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: var(--backgroundColor);
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  transition: all 0.5s ease;
+  transform: scale(0.9);
+  opacity: 0;
+}
+.app-show {
+  transform: scale(1);
+  opacity: 1;
+}

@@ -1,0 +1,63 @@
+:root {
+  --inputColor: #333333;
+  --inputBackgroundColor: #ffffff;
+  --inputBorderColor: #f2f2f2;
+  --inputFocusBorderColor: #0191ff;
+  // disabled
+  --inputColorDisabled: #dddddd;
+  --inputBackgroundColorDisabled: #f2f2f2;
+  --inputBorderColorDisabled: #dddddd;
+}
+body[data-theme="light"] {
+  --inputColor: #333333;
+  --inputBackgroundColor: #ffffff;
+  --inputBorderColor: #f2f2f2;
+  --inputFocusBorderColor: #0191ff;
+  // disabled
+  --inputColorDisabled: #dddddd;
+  --inputBackgroundColorDisabled: #f2f2f2;
+  --inputBorderColorDisabled: #dddddd;
+}
+body[data-theme="dark"] {
+  --inputColor: #ffffff;
+  --inputBackgroundColor: #333333;
+  --inputBorderColor: #424242;
+  --inputFocusBorderColor: #767676;
+  // disabled
+  --inputColorDisabled: #505050;
+  --inputBackgroundColorDisabled: #424242;
+  --inputBorderColorDisabled: #424242;
+}
+.input {
+  display: inline-block;
+  width: 100%;
+  outline: none;
+  border: 1px solid var(--inputBorderColor);
+  padding: 0;
+  transition: all 0.3s ease;
+  background: var(--inputBackgroundColor);
+  &:focus {
+    border-color: var(--inputFocusBorderColor);
+  }
+}
+.input-default {
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+.input-small {
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 6px 8px;
+}
+.input-large {
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 10px 12px;
+}
+.input-disabled {
+  color: var(--inputColorDisabled);
+  border-color: var(--inputBorderColorDisabled);
+  background: var(--inputBackgroundColorDisabled);
+  cursor: no-drop;
+}

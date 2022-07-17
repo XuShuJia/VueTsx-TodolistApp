@@ -1,0 +1,80 @@
+:root {
+  --panelBackgroundColor: #ffffff;
+  --panelHeaderBarButtonColor: #0191ff;
+  --panelHeaderBarButtonActiveColor: #dddddd;
+}
+body[data-theme="light"] {
+  --panelBackgroundColor: #ffffff;
+  --panelHeaderBarButtonColor: #0191ff;
+  --panelHeaderBarButtonActiveColor: #dddddd;
+}
+body[data-theme="dark"] {
+  --panelBackgroundColor: #1a1b1d;
+  --panelHeaderBarButtonColor: #ffee01;
+  --panelHeaderBarButtonActiveColor: #535353;
+}
+.container {
+  position: absolute;
+  z-index: 15;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.5s ease;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.container[data-show="true"] {
+  background-color: rgba(0, 0, 0, 0.6);
+  .panel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.panel {
+  width: 100%;
+  height: 85%;
+  max-height: 600px;
+  opacity: 0.8;
+  background: var(--panelBackgroundColor);
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.5s cubic-bezier(0.05, 0.52, 0.27, 1.01),
+    opacity 0.5s ease;
+  transform: translateY(120%);
+}
+.header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+.header-button {
+  font-size: 17px;
+  color: var(--panelHeaderBarButtonColor);
+  letter-spacing: 1px;
+  padding: 10px;
+  transition: color 0.3s ease;
+  &:active {
+    color: var(--panelHeaderBarButtonActiveColor);
+  }
+}
+.header-button[data-button="ok"] {
+  font-weight: bold;
+}
+.header-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color);
+}
+.content {
+  width: 100%;
+  height: calc(100% - 50px);
+  padding: 15px;
+  overflow: auto;
+}
